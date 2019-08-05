@@ -1,4 +1,9 @@
-
+function generateID(list) {
+    if(list.length) {
+        return (Math.max.apply(Math, list.map(item => item.id)) + 1);
+    }
+    return 1;
+}
 
 export function setItems(data = [], type = 'SET_ITEMS') {
     return (dispatch, getState) => {
