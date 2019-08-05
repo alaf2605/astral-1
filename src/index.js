@@ -7,7 +7,8 @@ import fontawesome from '@fortawesome/fontawesome'
 import fontawesomeFAS from '@fortawesome/fontawesome-free-solid';
 import fontawesomeFAR from '@fortawesome/fontawesome-free-regular';
 
-
+import store from './redux/store';
+import   history from './redux/history'
 import App from './components/App';
 
 
