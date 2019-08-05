@@ -13,7 +13,7 @@ import List from '../List';
 import FormAdd from '../Form/Add';
 import FormEdit from '../Form/Edit';
 
-import { setItems } from '../../redux/actions/index'
+import { setItems } from '../../redux/actions/';
 import './index.scss';
 
  class App extends Component {
@@ -55,3 +55,12 @@ import './index.scss';
 
 
 
+App.propTypes = {
+    setItems: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    setItems,
+}, dispatch);
+
+export default connect(null, mapDispatchToProps)(App);
