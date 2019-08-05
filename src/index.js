@@ -27,3 +27,18 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
+
+
+App.propTypes ={
+    setItems: PropTypes.func.isRequired,
+}
+
+
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+    setItems
+}, dispatch);
+
+export default connect(null, mapDispatchToProps)(App);
+
+
