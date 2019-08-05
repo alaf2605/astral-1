@@ -1,24 +1,28 @@
+
 import React from 'react';
-import { render }from 'react-dom';
-import './index.css';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { ConnectedRouter } from 'connected-react-router'
+import fontawesome from '@fortawesome/fontawesome'
+import fontawesomeFAS from '@fortawesome/fontawesome-free-solid';
+import fontawesomeFAR from '@fortawesome/fontawesome-free-regular';
+
+
 import App from './components/App';
-import { Provider} from 'react-redux';
-import { ConnectedRouter} from 'connected-react-router';
-import * as serviceWorker from './serviceWorker';
 
 
-render(
-    <Provider>
-        <ConnectedRouter>
-    
-    <div>
-        <App />
+import './index.scss';
 
-    </div>,
-    </ConnectedRouter>
+fontawesome.library.add(fontawesomeFAS, fontawesomeFAR);
 
+ReactDOM.render(
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <div>
+                <App/>
+            </div>
+        </ConnectedRouter>
     </Provider>,
     document.getElementById('root')
-
 );
-serviceWorker.unregister();
+
