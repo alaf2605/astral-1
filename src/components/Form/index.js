@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import IconFA from '@fortawesome/react-fontawesome';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import _isEqual from 'lodash/isEqual';
 
 import './index.scss';
@@ -57,7 +57,7 @@ class Form extends Component {
                     Submit
                 </button>
                 <Link to="/" className="nav-button">
-                    <IconFA icon={["fas", "arrow-left"]} />
+                    <FontAwesomeIcon icon={["fas", "arrow-left"]} />
                 </Link>
             </form>
         );

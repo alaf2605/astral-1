@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import IconFA from '@fortawesome/react-fontawesome';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import _isEqual from 'lodash/isEqual';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -175,7 +175,7 @@ class List extends Component {
                         </DragDropContext>
                     </ul>
                 <Link to="/add" className="nav-button">
-                    <IconFA icon={["fas", "plus"]} />
+                    <FontAwesomeIcon icon={["fas", "plus"]} />
                 </Link>
             </div>
         );
