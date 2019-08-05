@@ -16,8 +16,8 @@
     }
     .button-check {
         display: flex;
-        height: 30px;
-        width: 30px;
+        height: 20px;
+        width: 20px;
         text-align: center;
         border: 1px solid #e1e1e1;
         margin-right: 15px;
@@ -25,7 +25,7 @@
         justify-content: center;
         align-items: center;
         &--complete {
-            background: #58bb31;
+            background: #0a0a0a;
             border: 1px solid #020202;
         }
         &--incomplete {
@@ -43,8 +43,8 @@
     display: flex;
     button, a {
         display: flex;
-        height: 25px;
-        width: 25px;
+        height: 20px;
+        width: 20px;
         justify-content: center;
         align-items: center;
         margin-left: 15px;
