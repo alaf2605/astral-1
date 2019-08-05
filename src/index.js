@@ -11,8 +11,9 @@ import store from './redux/store';
 import   history from './redux/history'
 import App from './components/App';
 
-
 import './index.scss';
+
+
 
 fontawesome.library.add(fontawesomeFAS, fontawesomeFAR);
 
@@ -26,19 +27,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
-
-
-
-App.propTypes ={
-    setItems: PropTypes.func.isRequired,
-}
-
-
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-    setItems
-}, dispatch);
-
-export default connect(null, mapDispatchToProps)(App);
-
 
