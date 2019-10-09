@@ -2,6 +2,6 @@ React/Redux/React-Beautiful-DnD приложение для составлени
 
 
 
-Для старта приложения выполните <br/>
+Для старта приложения выполнить <br/>
 <code> yarn </code> <br/>
 <code> yarn start </code>
