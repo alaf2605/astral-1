@@ -18,6 +18,7 @@
     "history": "*",
     "node-sass": "*",
     "postcss-loader": "*",
+    "prettier": "^2.7.1",
     "prop-types": "*",
     "react": "*",
     "react-beautiful-dnd": "*",

@@ -1,52 +1,65 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
-import { removeItem, toggleComplete } from '../../../redux/actions/';
+import { removeItem, toggleComplete } from "../../../redux/actions/";
 
-import './index.scss';
+import "./index.scss";
 
 class Row extends Component {
-    render() {
-        return (
-            <div>
-                {
-                    !this.props.item.hidden &&
-                    <li className="row">
-                        <button
-                            onClick={() => this.props.toggleComplete(this.props.item)}
-                            className={`button button-check ${this.props.item.complete ? 'button-check--complete' : 'button-check--incomplete'}`}
-                        >
-                            <FontAwesomeIcon icon={["fas", "check"]} />
-                        </button>
-                        <span>{this.props.item.message}</span>
-                        <div className="settings">
-                            <Link to={`/edit/${this.props.item.id}`} className="button button-edit">
-                                <FontAwesomeIcon icon={["fas", "pencil-alt"]} />
-                            </Link>
-                            <button onClick={() => this.props.removeItem(this.props.item.id)} className="button button-remove">
-                                <FontAwesomeIcon icon={["far", "trash-alt"]} />
-                            </button>
-                        </div>
-                    </li>
-                }
+  render() {
+    return (
+      <div>
+        {!this.props.item.hidden && (
+          <li className="row">
+            <button
+              onClick={() => this.props.toggleComplete(this.props.item)}
+              className={`button button-check ${
+                this.props.item.complete
+                  ? "button-check--complete"
+                  : "button-check--incomplete"
+              }`}
+            >
+              <FontAwesomeIcon icon={["fas", "check"]} />
+            </button>
+            <span>{this.props.item.message}</span>
+            <div className="settings">
+              <Link
+                to={`/edit/${this.props.item.id}`}
+                className="button button-edit"
+              >
+                <FontAwesomeIcon icon={["fas", "pencil-alt"]} />
+              </Link>
+              <button
+                onClick={() => this.props.removeItem(this.props.item.id)}
+                className="button button-remove"
+              >
+                <FontAwesomeIcon icon={["far", "trash-alt"]} />
+              </button>
             </div>
-        );
-    }
+          </li>
+        )}
+      </div>
+    );
+  }
 }
 
 Row.propTypes = {
-    item: PropTypes.object.isRequired,
-    removeItem: PropTypes.func.isRequired,
-    toggleComplete: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired,
+  removeItem: PropTypes.func.isRequired,
+  toggleComplete: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    removeItem,
-    toggleComplete,
-}, dispatch);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+      removeItem,
+      toggleComplete,
+    },
+    dispatch
+  );
 
 export default connect(null, mapDispatchToProps)(Row);
